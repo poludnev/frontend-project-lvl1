@@ -11,13 +11,18 @@
     "url": "git+https://github.com/poludnev/frontend-project-lvl1.git"
   },
   "bin": {
-    "brain-games": "./src/bin/brain-games.js"    
+    "brain-games": "./src/bin/brain-games.js"
   },
   "author": "POLUDNEV",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/poludnev/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/poludnev/frontend-project-lvl1#readme"
-  
+  "homepage": "https://github.com/poludnev/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
 }
