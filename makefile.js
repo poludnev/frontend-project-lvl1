@@ -1,4 +1,0 @@
-#Makefile
-
-install:
-	npm install
