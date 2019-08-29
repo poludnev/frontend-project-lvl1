@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import greeting from '..';
+import { greeting, game1} from '..';
 
 console.log('Welcome to the Brain Games!');
 
-greeting();
