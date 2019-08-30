@@ -46,7 +46,10 @@ export const brainGame = (attemptLim = 3, task) => {
     const gameType = gameSelect(task);
     // console.log(gameType);
     const answer = readlineSync.question('Your answer: ');
-    if (answer != gameType) {
+    console.log(typeof (answer));
+    console.log(typeof (gameType));
+    console.log(gameType.toString());
+    if (answer !== gameType.toString()) {
       console.log(`\x1b[31m'${answer}'\x1b[0m is wrong answer, correct answer was \x1b[31m'${gameType}'\x1b[0m. \nLet\x1b[31m's try again, ${name}!\x1b[0m`);
       return;
     }
