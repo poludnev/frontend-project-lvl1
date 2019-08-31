@@ -11,6 +11,9 @@ start2:
 
 start3:
 	npx babel-node src/bin/brain-calc.js
+	
+start4:
+	npx babel-node src/bin/brain-gcd.js
 
 publish:
 	npm publish --dry-run

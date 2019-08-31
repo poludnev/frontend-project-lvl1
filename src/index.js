@@ -6,7 +6,7 @@ export const greeting = () => {
   return name;
 };
 
-const randNum = (multiplier = 100, shifter = 0) => Math.floor(Math.random() * multiplier + shifter);
+export const randNum = (mltplr = 100, shifter = 0) => Math.floor(Math.random() * mltplr + shifter);
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
 const evenGame = () => {
@@ -32,10 +32,25 @@ const calcGame = () => {
   return result;
 };
 
+const gcdGame = () => {
+  const num1 = randNum();
+  const num2 = randNum();
+  console.log(`Question: ${num1} ${num2}`);
+  if (num1 === 0 || num2 === 0) return 1;
+  let c1 = num1;
+  let c2 = num2;
+  if (num1 < num2) { c1 = num2; c2 = num1; }
+  if (c1 % c2 === 0) return c2;
+  for (let dev = c2; dev >= 0; dev -= 1) {
+    if (c1 % dev === 0 && c2 % dev === 0) return dev;
+  }
+  return NaN;
+};
 
 const gameSelect = (arg) => {
   if (arg === 'even') return evenGame();
   if (arg === 'calc') return calcGame();
+  if (arg === 'gcd') return gcdGame();
   return null;
 };
 
