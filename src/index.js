@@ -47,10 +47,31 @@ const gcdGame = () => {
   return NaN;
 };
 
+const progressionGame = () => {
+  const progressLim = 10;
+  const progressstart = randNum();
+  const array1 = [];
+  array1[0] = progressstart;
+  for (let i = 1; i < progressLim; i += 1) {
+    array1[i] = array1[i - 1] + 2;
+  }
+
+  const arrayMissPosition = randNum(progressLim);
+  let quest = '';
+  for (let i = 0; i < progressLim; i += 1) {
+    if (i === arrayMissPosition) { quest = `${quest} ..`; } else {
+      quest = `${quest} ${array1[i]}`;
+    }
+  }
+  console.log(`Question: ${quest}`);
+  return array1[arrayMissPosition];
+};
+
 const gameSelect = (arg) => {
   if (arg === 'even') return evenGame();
   if (arg === 'calc') return calcGame();
   if (arg === 'gcd') return gcdGame();
+  if (arg === 'progression') return progressionGame();
   return null;
 };
 
