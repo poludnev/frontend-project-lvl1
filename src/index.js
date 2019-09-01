@@ -67,24 +67,34 @@ const progressionGame = () => {
   return array1[arrayMissPosition];
 };
 
+const primeGame = () => {
+  const isPrime = (num) => {
+    console.log(`Question: ${num}`);
+    for (let i = 2; i < num; i += 1) {
+      if (num % i === 0) return 'no';
+    }
+    return 'yes';
+  };
+  return isPrime(randNum());
+};
+
+// game selector
 const gameSelect = (arg) => {
   if (arg === 'even') return evenGame();
   if (arg === 'calc') return calcGame();
   if (arg === 'gcd') return gcdGame();
   if (arg === 'progression') return progressionGame();
+  if (arg === 'prime') return primeGame();
   return null;
 };
+// game selector end
 
 // engine
 export const brainGame = (attemptLim = 3, task) => {
   const name = greeting();
   for (let i = 0; i < attemptLim; i += 1) {
     const gameType = gameSelect(task);
-    // console.log(gameType);
     const answer = readlineSync.question('Your answer: ');
-    console.log(typeof (answer));
-    console.log(typeof (gameType));
-    console.log(gameType.toString());
     if (answer !== gameType.toString()) {
       console.log(`\x1b[31m'${answer}'\x1b[0m is wrong answer, correct answer was \x1b[31m'${gameType}'\x1b[0m. \nLet\x1b[31m's try again, ${name}!\x1b[0m`);
       return;
