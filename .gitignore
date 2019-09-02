@@ -2,3 +2,9 @@
 dist
 .DS_Store
 dist/bin/brain-even.js
+.DS_Store
+.DS_Store
+dist/bin/brain-even.js
+dist/bin/brain-games.js
+dist/index.js
+src/.DS_Store

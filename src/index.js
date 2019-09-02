@@ -1,106 +1,38 @@
 import readlineSync from 'readline-sync';
-
-export const greeting = () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  return name;
-};
-
-export const randNum = (mltplr = 100, shifter = 0) => Math.floor(Math.random() * mltplr + shifter);
-const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
-
-const evenGame = () => {
-  const num = randNum();
-  console.log(`Question: ${num}`);
-  return isEven(num);
-};
-
-const calcGame = () => {
-  const num1 = randNum();
-  const num2 = randNum();
-  let result = 0;
-  if (randNum(3) === 0) {
-    result = num1 + num2;
-    console.log(`Question: ${num1} + ${num2}`);
-  } else if (randNum(3) === 1) {
-    result = num1 - num2;
-    console.log(`Question: ${num1} - ${num2}`);
-  } else {
-    result = num1 * num2;
-    console.log(`Question: ${num1} * ${num2}`);
-  }
-  return result;
-};
-
-const gcdGame = () => {
-  const num1 = randNum();
-  const num2 = randNum();
-  console.log(`Question: ${num1} ${num2}`);
-  if (num1 === 0 || num2 === 0) return 1;
-  let c1 = num1;
-  let c2 = num2;
-  if (num1 < num2) { c1 = num2; c2 = num1; }
-  if (c1 % c2 === 0) return c2;
-  for (let dev = c2; dev >= 0; dev -= 1) {
-    if (c1 % dev === 0 && c2 % dev === 0) return dev;
-  }
-  return NaN;
-};
-
-const progressionGame = () => {
-  const progressLim = 10;
-  const progressstart = randNum();
-  const array1 = [];
-  array1[0] = progressstart;
-  for (let i = 1; i < progressLim; i += 1) {
-    array1[i] = array1[i - 1] + 2;
-  }
-
-  const arrayMissPosition = randNum(progressLim);
-  let quest = '';
-  for (let i = 0; i < progressLim; i += 1) {
-    if (i === arrayMissPosition) { quest = `${quest} ..`; } else {
-      quest = `${quest} ${array1[i]}`;
-    }
-  }
-  console.log(`Question: ${quest}`);
-  return array1[arrayMissPosition];
-};
-
-const primeGame = () => {
-  const isPrime = (num) => {
-    console.log(`Question: ${num}`);
-    for (let i = 2; i < num; i += 1) {
-      if (num % i === 0) return 'no';
-    }
-    return 'yes';
-  };
-  return isPrime(randNum());
-};
+import { car, cdr } from '@hexlet/pairs';
+import isEvenGame from './games/game-even';
+import calcGame from './games/game-calc';
+import gcdGame from './games/game-gcd';
+import progressionGame from './games/game-progress';
+import primeGame from './games/game-prime';
 
 // game selector
-const gameSelect = (arg) => {
-  if (arg === 'even') return evenGame();
-  if (arg === 'calc') return calcGame();
-  if (arg === 'gcd') return gcdGame();
-  if (arg === 'progression') return progressionGame();
-  if (arg === 'prime') return primeGame();
+const selectGameType = (gameShortName) => {
+  if (gameShortName === 'even') return isEvenGame();
+  if (gameShortName === 'calc') return calcGame();
+  if (gameShortName === 'gcd') return gcdGame();
+  if (gameShortName === 'progression') return progressionGame();
+  if (gameShortName === 'prime') return primeGame();
   return null;
 };
 // game selector end
 
-// engine
-export const brainGame = (attemptLim = 3, task) => {
-  const name = greeting();
-  for (let i = 0; i < attemptLim; i += 1) {
-    const gameType = gameSelect(task);
+
+export default (gameShortName) => {
+  const attemptsLimit = 3;
+  console.log('Welcome to the Brain Games!');
+  console.log(car(selectGameType(gameShortName)));
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  for (let i = 0; i < attemptsLimit; i += 1) {
+    const res = cdr(selectGameType(gameShortName));
+    console.log(`Question: ${car(res)}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer !== gameType.toString()) {
-      console.log(`\x1b[31m'${answer}'\x1b[0m is wrong answer, correct answer was \x1b[31m'${gameType}'\x1b[0m. \nLet\x1b[31m's try again, ${name}!\x1b[0m`);
+    if (answer !== cdr(res).toString()) {
+      console.log(`\x1b[31m'${answer}'\x1b[0m is wrong answer, correct answer was \x1b[31m'${cdr(res)}'\x1b[0m. \nLet\x1b[31m's try again, ${name}!\x1b[0m`);
       return;
     }
     console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
 };
-// engine

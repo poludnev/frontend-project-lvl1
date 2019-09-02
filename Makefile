@@ -21,6 +21,9 @@ start5:
 start6: 
 	npx babel-node src/bin/brain-prime.js
 
+start7:
+	npx babel-node src/bin/test-brain-games.js
+
 publish:
 	npm publish --dry-run
 
