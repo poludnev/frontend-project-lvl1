@@ -2,6 +2,7 @@
 <p>Install:</p>
 <a href="https://asciinema.org/a/yKEcZcUryB97IrTEyDqGb33aJ" target="_blank"><img src="https://asciinema.org/a/yKEcZcUryB97IrTEyDqGb33aJ.svg" width = "200"></a>
 <p>Even Game:</p>
+<a href="https://asciinema.org/a/jHGMwQFvzy9HP8BqhsXaU1Olf" target="_blank"><img src="https://asciinema.org/a/jHGMwQFvzy9HP8BqhsXaU1Olf.svg" width = "200" /></a>
 <p>Calc Game:</p>
 <p>GCD Game:</p>
 <p>"Is Prime" Game:</p>
