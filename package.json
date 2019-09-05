@@ -2,6 +2,7 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "first hexlet project",
+  "keyword": "poludnev, hexlet, project",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
