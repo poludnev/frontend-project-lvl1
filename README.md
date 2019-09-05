@@ -6,6 +6,9 @@
 <p>Calc Game:</p>
 <a href="https://asciinema.org/a/X6Bb9btodh2BhGRfFZHMBY0im" target="_blank"><img src="https://asciinema.org/a/X6Bb9btodh2BhGRfFZHMBY0im.svg" width="200"/></a>
 <p>GCD Game:</p>
+<a href="https://asciinema.org/a/NnUxZwTJmVtzdGxe6oNS3FOlo" target="_blank"><img src="https://asciinema.org/a/NnUxZwTJmVtzdGxe6oNS3FOlo.svg" width="200"/></a>
 <p>"Is Prime" Game:</p>
+<a href="https://asciinema.org/a/bpZZyeVhpfjAyTyxbCIIPyQLk" target="_blank"><img src="https://asciinema.org/a/bpZZyeVhpfjAyTyxbCIIPyQLk.svg" width="200"/></a>
 <p>Progression Game:</p>
+<a href="https://asciinema.org/a/eh2a0nnHLQFnPbBh2mvz5eeyh" target="_blank"><img src="https://asciinema.org/a/eh2a0nnHLQFnPbBh2mvz5eeyh.svg" width="200" /></a>
 
