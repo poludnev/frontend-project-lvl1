@@ -1,7 +1,7 @@
 // import { isEven, randNum } from '..';
 import { cons } from '@hexlet/pairs';
+import randNum from '../modules/random-number';
 
-const randNum = (mltplr = 100, shifter = 0) => Math.floor(Math.random() * mltplr + shifter);
 export default () => {
   const intro = 'What is the result of the expression?\n';
   const number1 = randNum();

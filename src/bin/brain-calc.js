@@ -1,3 +1,5 @@
 #!/usr/bin/env node
-import brainGameNew from '..'
-brainGameNew('calc');
+import brainGameNew from '..';
+import calcGame from '../games/game-calc';
+
+brainGameNew(calcGame);

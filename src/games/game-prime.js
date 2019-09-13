@@ -1,8 +1,9 @@
 import { cons } from '@hexlet/pairs';
+import decorate from '../modules/decorate';
+import randNum from '../modules/random-number';
 
-const randNum = (mltplr = 100, shifter = 0) => Math.floor(Math.random() * mltplr + shifter);
 export default () => {
-  const intro = 'Answer \x1b[31m"yes"\x1b[0m \x1b[1mif\x1b[22m given number is prime. Otherwise answer \x1b[31m"no"\x1b[0m.\n';
+  const intro = `Answer ${decorate('"yes"')} if given number is prime. Otherwise answer ${decorate('"no"')}.\n`;
 
   let questExpression = '';
 

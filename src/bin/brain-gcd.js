@@ -1,3 +1,5 @@
 #!/usr/bin/env node
-import brainGameNew from '..'
-brainGameNew('gcd');
+import brainGameNew from '..';
+import gcdGame from '../games/game-gcd';
+
+brainGameNew(gcdGame);

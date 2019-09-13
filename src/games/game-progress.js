@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
+import randNum from '../modules/random-number';
 
-const randNum = (mltplr = 100, shifter = 0) => Math.floor(Math.random() * mltplr + shifter);
 export default () => {
   const intro = 'What number is missing in the progression?\n';
   let result = 0;
