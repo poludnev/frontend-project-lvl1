@@ -1,7 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import randNum from '../modules/random-number';
 
-
 const getGCD = (number1, number2) => {
   let result = 1;
   const questExpression = `${number1} ${number2}`;
@@ -18,7 +17,6 @@ const getGCD = (number1, number2) => {
   }
   return cons(questExpression, result);
 };
-
 
 export default () => {
   const intro = 'Find the greatest common divisor of given numbers.\n';
