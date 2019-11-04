@@ -6,16 +6,16 @@ export default () => {
   let result = 0;
   let questExpression = '';
 
-  const progressLim = 10;
-  const progressstart = randNum();
+  const progressionLength = 10;
+  const progressionInitial = randNum();
   const array1 = [];
-  array1[0] = progressstart;
-  for (let i = 1; i < progressLim; i += 1) {
+  array1[0] = progresssionInitial;
+  for (let i = 1; i < progressionLength; i += 1) {
     array1[i] = array1[i - 1] + 2;
   }
 
-  const arrayMissPosition = randNum(progressLim);
-  for (let i = 0; i < progressLim; i += 1) {
+  const arrayMissPosition = randNum(progressionLength);
+  for (let i = 0; i < progressionLength; i += 1) {
     if (i === arrayMissPosition) { questExpression = `${questExpression} ..`; } else {
       questExpression = `${questExpression} ${array1[i]}`;
     }
