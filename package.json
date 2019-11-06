@@ -2,7 +2,11 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "first hexlet project",
-  "keyword": [ "poludnev", " hexlet", " project"],
+  "keyword": [
+    "poludnev",
+    "hexlet",
+    "project"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-games1": "src/bin/brain-games.js",
@@ -45,7 +49,8 @@
   },
   "dependencies": {
     "@hexlet/pairs": "^1.0.10",
-	"colors": "^1.3.3",
-	"readline-sync": "^1.4.10"
+    "colors": "^1.3.3",
+    "hexlet-pairs-data": "^1.0.8",
+    "readline-sync": "^1.4.10"
   }
 }
