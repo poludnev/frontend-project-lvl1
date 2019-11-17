@@ -7,9 +7,8 @@ export default () => {
   let questExpression = '';
 
   const progressionLength = 10;
-  const progressionInitial = randNum();
   const array1 = [];
-  array1[0] = progresssionInitial;
+  array1[0] = randNum();
   for (let i = 1; i < progressionLength; i += 1) {
     array1[i] = array1[i - 1] + 2;
   }

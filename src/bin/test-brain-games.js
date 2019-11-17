@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import brainGameNew from '..'
+import brainGameNew from '..';
+
 brainGameNew('even');
 brainGameNew('calc');
 brainGameNew('gcd');
