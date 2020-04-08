@@ -1,24 +1,30 @@
 import { cons } from '@hexlet/pairs';
 import randNum from '../modules/random-number';
+import brainGameNew from '..';
 
-export default () => {
+const progressionGame = () => {
   const intro = 'What number is missing in the progression?\n';
+
   let result = 0;
   let questExpression = '';
 
   const progressionLength = 10;
-  const array1 = [];
-  array1[0] = randNum();
+  const progressionStep = randNum();
+  const progressionNumbers = [];
+
+
+  progressionNumbers[0] = randNum();
   for (let i = 1; i < progressionLength; i += 1) {
-    array1[i] = array1[i - 1] + 2;
+    progressionNumbers[i] = progressionNumbers[i - 1] + progressionStep;
   }
 
   const arrayMissPosition = randNum(progressionLength);
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === arrayMissPosition) { questExpression = `${questExpression} ..`; } else {
-      questExpression = `${questExpression} ${array1[i]}`;
+      questExpression = `${questExpression} ${progressionNumbers[i]}`;
     }
   }
-  result = array1[arrayMissPosition];
+  result = progressionNumbers[arrayMissPosition];
   return cons(intro, cons(questExpression, result));
 };
+export default () => brainGameNew(progressionGame);

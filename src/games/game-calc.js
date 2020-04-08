@@ -1,7 +1,8 @@
 import { cons } from '@hexlet/pairs';
 import randNum from '../modules/random-number';
+import brainGameNew from '..';
 
-export default () => {
+const calcGame = () => {
   const intro = 'What is the result of the expression?\n';
   const operationsList = ['*', '+', '-'];
   const number1 = randNum();
@@ -23,3 +24,5 @@ export default () => {
   }
   return cons(intro, cons(questExpression, result));
 };
+
+export default () => brainGameNew(calcGame);

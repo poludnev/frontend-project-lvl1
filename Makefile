@@ -6,22 +6,22 @@ install:
 start:
 	npx babel-node src/bin/brain-games.js
 
-start2:
+start-even:
 	npx babel-node src/bin/brain-even.js
 
-start3:
+start-calc:
 	npx babel-node src/bin/brain-calc.js
 	
-start4:
+start-gcd:
 	npx babel-node src/bin/brain-gcd.js
 
-start5: 
+start-progress: 
 	npx babel-node src/bin/brain-progression.js
 
-start6: 
+start-prime: 
 	npx babel-node src/bin/brain-prime.js
 
-start7:
+start-all:
 	npx babel-node src/bin/test-brain-games.js
 
 publish:

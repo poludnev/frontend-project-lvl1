@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
+import { getDecoratedString, decorate } from './modules/decorate';
 
 export default (game) => {
   const attemptsLimit = 3;
   console.log('Welcome to the Brain Games!');
-  console.log(car(game()));
+  console.log(getDecoratedString(car(game()))); // show new intro;
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   for (let i = 0; i < attemptsLimit; i += 1) {
@@ -13,8 +14,8 @@ export default (game) => {
     const answer = readlineSync.question('Your answer: ');
     const result = cdr(cdr(gameCall));
     if (answer !== result.toString()) {
-      console.log(`\x1b[31m'${answer}'\x1b[0m is wrong answer, correct answer was \x1b[31m'${result}'\x1b[0m.`);
-      console.log(`Let\x1b[31m's try again, ${name}!\x1b[0m`);
+      console.log(`${decorate(['\'', answer, '\''], 'red')} is wrong answer, correct answer was ${decorate(['\'', result, '\''], 'red')}.`);
+      console.log(`Let${decorate(['\'s try again,'], 'red')} ${decorate([name, '!'], 'red')}`);
       return;
     }
     console.log('Correct!');

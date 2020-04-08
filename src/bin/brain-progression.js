@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import brainGameNew from '..';
+// import brainGameNew from '..';
 import progressionGame from '../games/game-progress';
 
-brainGameNew(progressionGame);
+// brainGameNew(progressionGame);
+progressionGame();

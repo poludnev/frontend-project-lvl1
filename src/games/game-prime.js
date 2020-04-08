@@ -1,9 +1,17 @@
 import { cons } from '@hexlet/pairs';
-import decorate from '../modules/decorate';
+// import decorate from '../modules/decorate';
 import randNum from '../modules/random-number';
+import brainGameNew from '..';
 
-export default () => {
-  const intro = `Answer ${decorate('"yes"')} if given number is prime. Otherwise answer ${decorate('"no"')}.\n`;
+const primeGame = () => {
+  const intro = {
+    string: 'Answer "yes" if number is even, otherwise answer "no". \n',
+    wordsToDecorate: [
+      { word: '"yes"', style: 'red' },
+      { word: '"no".', style: 'red' },
+    ],
+  };
+
 
   let questExpression = '';
 
@@ -18,3 +26,4 @@ export default () => {
 
   return cons(intro, cons(questExpression, result));
 };
+export default () => brainGameNew(primeGame);
