@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import randNum from '../modules/random-number';
+import { randNum } from '../utils/funcs';
 import brainGameNew from '..';
 
 const getGCD = (number1, number2) => {
@@ -19,11 +19,12 @@ const getGCD = (number1, number2) => {
 };
 
 const gcdGame = () => {
-  const intro = 'Find the greatest common divisor of given numbers.\n';
+  const intro = 'Find the greatest common divisor of given numbers.';
   const number1 = randNum();
   const number2 = randNum();
-  const questString = `${number1} ${number2}`;
-  return cons(intro, cons(questString, getGCD(number1, number2)));
+  const question = `${number1} ${number2}`;
+  const answer = getGCD(number1, number2);
+  return cons(intro, cons(question, answer.toString()));
 };
 
 export default () => brainGameNew(gcdGame);

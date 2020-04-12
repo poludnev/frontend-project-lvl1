@@ -1,18 +1,14 @@
 import { cons } from '@hexlet/pairs';
-import randNum from '../modules/random-number';
+import { randNum } from '../utils/funcs';
 import brainGameNew from '..';
 
 const isEven = (num) => (num % 2 === 0);
-const intro = {
-  string: 'Answer "yes" if number is even, otherwise answer "no". \n',
-  wordsToDecorate: [
-    { word: '"yes"', style: 'red' },
-    { word: '"no".', style: 'red' },
-  ],
-};
+
+const intro = 'Answer "yes" if number is even, otherwise answer "no".';
+
 const evenGame = () => {
   const question = randNum();
-  const correctAnswer = isEven(question) ? 'yes' : 'no';
-  return cons(intro, cons(question, correctAnswer));
+  const answer = isEven(question) ? 'yes' : 'no';
+  return cons(intro, cons(question, answer.toString()));
 };
 export default () => brainGameNew(evenGame);

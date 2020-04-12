@@ -1,28 +1,32 @@
 import { cons } from '@hexlet/pairs';
-import randNum from '../modules/random-number';
+import { randNum } from '../utils/funcs';
 import brainGameNew from '..';
 
 const calcGame = () => {
-  const intro = 'What is the result of the expression?\n';
+  const intro = 'What is the result of the expression?';
   const operationsList = ['*', '+', '-'];
   const number1 = randNum();
   const number2 = randNum();
-  let questExpression;
-  let result = 0;
-  switch (operationsList[randNum(operationsList.length)]) {
+  const operator = operationsList[randNum(0, operationsList.length)];
+  const question = `${number1} ${operator} ${number2}`;
+  let answer;
+  switch (operator) {
     case '+':
-      questExpression = `${number1} + ${number2}`;
-      result = number1 + number2;
+      answer = number1 + number2;
       break;
     case '*':
-      questExpression = `${number1} * ${number2}`;
-      result = number1 * number2;
+      answer = number1 * number2;
+      break;
+    case '-':
+      answer = number1 - number2;
       break;
     default:
-      questExpression = `${number1} - ${number2}`;
-      result = number1 - number2;
+      answer = 'error';
   }
-  return cons(intro, cons(questExpression, result));
+  return cons(intro, cons(question, answer.toString()));
+// во всех играх возвращается одинаковая строка для передачи в движок.
+// не во всех есть необходимость к привдению правильного ответа к строке
+// но это "стандартизирует" интерфейс для обращения к движку, по крайней мере мне так кажется.
 };
 
 export default () => brainGameNew(calcGame);
