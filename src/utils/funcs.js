@@ -1,3 +1,5 @@
+export const randNum = (first = 0, last = 100) => Math.floor(Math.random() * last + first);
+
 export const decorate = (array, style = '') => {
   switch (style) {
     case 'red':
@@ -9,10 +11,9 @@ export const decorate = (array, style = '') => {
   }
 };
 
-export const getDecoratedString = (params) => {
-  if (!params) return '';
-  const { string, wordsToDecorate } = params;
-  if (!wordsToDecorate) return params;
+export const getDecoratedString = (string, wordsToDecorate) => {
+  if (!string) return '';
+  if (!wordsToDecorate) return string;
   const mapping = (phrase) => {
     for (let i = 0; i < wordsToDecorate.length; i += 1) {
       if (phrase === wordsToDecorate[i].word) {
