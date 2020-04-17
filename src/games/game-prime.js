@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import { randNum } from '../utils/funcs';
+import { randNum } from '../funcs';
 import brainGameNew from '..';
 
 const isPrime = (number) => {
@@ -9,13 +9,10 @@ const isPrime = (number) => {
   }
   return true;
 };
-
-const primeGame = () => {
-  const intro = 'Answer "yes" if number is prime, otherwise answer "no".';
-
+const intro = 'Answer "yes" if number is prime, otherwise answer "no".';
+const isPrimeGame = () => {
   const question = randNum();
   const answer = isPrime(question) ? 'yes' : 'no';
-
-  return cons(intro, cons(question, answer.toString()));
+  return cons(question, answer);
 };
-export default () => brainGameNew(primeGame);
+export default () => brainGameNew(intro, isPrimeGame);

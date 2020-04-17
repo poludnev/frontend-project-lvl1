@@ -1,30 +1,20 @@
 import { cons } from '@hexlet/pairs';
-import { randNum } from '../utils/funcs';
+import { randNum } from '../funcs';
 import brainGameNew from '..';
 
-const getGCD = (number1, number2) => {
-  let result = 1;
-  if (number1 > 0 && number2 > 0) {
-    let mediateNumber1 = number1;
-    let mediateNumber2 = number2;
-    if (number1 < number2) { mediateNumber1 = number2; mediateNumber2 = number1; }
-    for (let devisor = mediateNumber2; devisor >= 0; devisor -= 1) {
-      if (mediateNumber1 % devisor === 0 && mediateNumber2 % devisor === 0) {
-        result = devisor;
-        return result;
-      }
-    }
-  }
-  return result;
+const getGCD = (num1, num2) => {
+  if (num1 % num2 === 0) return num2;
+  return getGCD(num2, num1 % num2);
 };
 
-const gcdGame = () => {
-  const intro = 'Find the greatest common divisor of given numbers.';
+const intro = 'Find the greatest common divisor of given numbers.';
+
+const findGcdGame = () => {
   const number1 = randNum();
   const number2 = randNum();
   const question = `${number1} ${number2}`;
-  const answer = getGCD(number1, number2);
-  return cons(intro, cons(question, answer.toString()));
+  const answer = getGCD(number1, number2).toString();
+  return cons(question, answer);
 };
 
-export default () => brainGameNew(gcdGame);
+export default () => brainGameNew(intro, findGcdGame);

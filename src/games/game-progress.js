@@ -1,10 +1,7 @@
 import { cons } from '@hexlet/pairs';
-import { randNum } from '../utils/funcs';
+import { randNum } from '../funcs';
 import brainGameNew from '..';
 
-
-// я решил, что пора вынести прогрессию в отдельную функцию,
-// применил формулу из замечания преподавателя, первый элемент задается стартовым значением
 const makeAProgression = (start, step, length = 10) => {
   const result = [];
   for (let i = 0; i < length; i += 1) {
@@ -13,16 +10,15 @@ const makeAProgression = (start, step, length = 10) => {
   return result;
 };
 
-// определение скрытого элемента через цикл убрал, т.к. это оказалось нечитабельно.
-// спустя несколько месяцев перерыва мне понадобилось около 15 минут,
-// чтобы понять, что там происходит.
-const progressionGame = () => {
-  const intro = 'What number is missing in the progression?';
-  const progressionNumbers = makeAProgression(randNum(), randNum());
-  const progressMissPosition = randNum(0, progressionNumbers.length - 1);
-  const answer = progressionNumbers[progressMissPosition];
-  progressionNumbers[progressMissPosition] = '..';
-  const question = progressionNumbers.join(' ');
-  return cons(intro, cons(question, answer.toString()));
+const intro = 'What number is missing in the progression?';
+const findHiddenProgresElementGame = () => {
+  const progressStart = randNum();
+  const progressStep = randNum();
+  const progression = makeAProgression(progressStart, progressStep);
+  const progressMissPosition = randNum(0, progression.length - 1);
+  const answer = progression[progressMissPosition].toString();
+  progression[progressMissPosition] = '..';
+  const question = progression.join(' ');
+  return cons(question, answer);
 };
-export default () => brainGameNew(progressionGame);
+export default () => brainGameNew(intro, findHiddenProgresElementGame);
