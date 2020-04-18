@@ -11,6 +11,7 @@ const makeAProgression = (start, step, length = 10) => {
 };
 
 const intro = 'What number is missing in the progression?';
+
 const findHiddenProgresElementGame = () => {
   const progressStart = randNum();
   const progressStep = randNum();
