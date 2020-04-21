@@ -2,7 +2,7 @@
 dist
 
 package-lock.json
-src/games/.DS_Store
-.DS_Store
-src/.DS_Store
+
+*.DS_Store
+
 src/bin/test-brain-games.js
