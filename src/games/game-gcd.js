@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import { randNum } from '../funcs';
-import brainGameNew from '..';
+import runGame from '..';
 
 const getGCD = (num1, num2) => {
   if (num1 % num2 === 0) return num2;
@@ -17,4 +17,4 @@ const findGcdGame = () => {
   return cons(question, answer);
 };
 
-export default () => brainGameNew(intro, findGcdGame);
+export default () => runGame(intro, findGcdGame);

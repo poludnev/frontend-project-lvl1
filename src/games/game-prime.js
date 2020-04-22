@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import { randNum } from '../funcs';
-import brainGameNew from '..';
+import runGame from '..';
 
 const isPrime = (number) => {
   if (number < 2) return false;
@@ -10,9 +10,9 @@ const isPrime = (number) => {
   return true;
 };
 const intro = 'Answer "yes" if number is prime, otherwise answer "no".';
-const isPrimeGame = () => {
+const checkIfPrimeGame = () => {
   const question = randNum();
   const answer = isPrime(question) ? 'yes' : 'no';
   return cons(question, answer);
 };
-export default () => brainGameNew(intro, isPrimeGame);
+export default () => runGame(intro, checkIfPrimeGame);

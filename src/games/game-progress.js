@@ -1,8 +1,8 @@
 import { cons } from '@hexlet/pairs';
 import { randNum } from '../funcs';
-import brainGameNew from '..';
+import runGame from '..';
 
-const makeAProgression = (start, step, length = 10) => {
+const makeArithmProgression = (start, step, length = 10) => {
   const result = [];
   for (let i = 0; i < length; i += 1) {
     result[i] = start + step * i;
@@ -15,11 +15,11 @@ const intro = 'What number is missing in the progression?';
 const findHiddenProgresElementGame = () => {
   const progressStart = randNum();
   const progressStep = randNum();
-  const progression = makeAProgression(progressStart, progressStep);
-  const progressMissPosition = randNum(0, progression.length - 1);
-  const answer = progression[progressMissPosition].toString();
-  progression[progressMissPosition] = '..';
+  const progression = makeArithmProgression(progressStart, progressStep);
+  const missingElementPosition = randNum(0, progression.length - 1);
+  const answer = progression[missingElementPosition].toString();
+  progression[missingElementPosition] = '..';
   const question = progression.join(' ');
   return cons(question, answer);
 };
-export default () => brainGameNew(intro, findHiddenProgresElementGame);
+export default () => runGame(intro, findHiddenProgresElementGame);

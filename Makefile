@@ -21,9 +21,6 @@ start-progress:
 start-prime: 
 	npx babel-node src/bin/brain-prime.js
 
-start-all:
-	npx babel-node src/bin/test-brain-games.js
-
 publish:
 	npm publish --dry-run
 
