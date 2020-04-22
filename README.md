@@ -27,6 +27,6 @@
   <li>The "Progression" Game</li>
   <p> Guess a random missing element of a random arithmetic progression.</p>
   <p>Run:</p>
-  $ brain-progress <br>
+  $ brain-progression <br>
   <br><a href="https://asciinema.org/a/eh2a0nnHLQFnPbBh2mvz5eeyh" target="_blank"><img src="https://asciinema.org/a/eh2a0nnHLQFnPbBh2mvz5eeyh.svg" width="200" /></a><br><br>
 </ol>
