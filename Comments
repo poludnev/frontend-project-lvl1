@@ -1,3 +1,33 @@
+26/04/2020:
+1. 
+// game-calc.js - можно обойтись без префиксов в названии модулей с играми, и так понятно, что они относятся к brain games, лежат в каталоге games
+= исправлено
+
+2.
+https://github.com/poludnev/frontend-project-lvl1/blob/add2f061747c1817b0d7daa11fc1840a6f859e38/src/index.js#L5
+// callGame - а какую операцию выполняет эта функция? Она вызывает игру? Нет. Игру вызывает исполняемый файл. Хотя и в том случае семантически call не подходит.
+= исправлено на generateGameRoundData, потому что она запускает функцию из файла игры, которая генерирует данные для раунда.. Других идей у меня не возникает.
+3. 
+// funcs.js - все модули содержат функции. Так именовать модули не принято. Лучше, например, utils.js
+= исправлено
+4. 
+https://github.com/poludnev/frontend-project-lvl1/blob/add2f061747c1817b0d7daa11fc1840a6f859e38/src/games/game-even.js#L9
+// Разве эта функция что-то проверяет? Она генерирует данные для игры (для раунда). 
+= исправлено на generateEvenGameRoundData… ну и по аналогии то же самое с такими же функциями в других играх. Или лучше просто generateGameRound? И также оставить в остальных? Но тогда вроде не совсем понять, что за раунд, какой игры..
+5. 
+https://github.com/poludnev/frontend-project-lvl1/blob/add2f061747c1817b0d7daa11fc1840a6f859e38/src/games/game-calc.js#L13
+// Можно просто answer.
+= исправлено
+6. 
+https://github.com/poludnev/frontend-project-lvl1/blob/add2f061747c1817b0d7daa11fc1840a6f859e38/src/games/game-progress.js#L5
+// makeArithmProgression - такие сокращения выглядят не очень хорошо. Предложу вам не использовать сокращений, кроме канонических. 
+= исправлено
+7. 
+https://github.com/poludnev/frontend-project-lvl1/blob/add2f061747c1817b0d7daa11fc1840a6f859e38/src/games/game-prime.js#L6
+//Более точно по смыслу описать условие таким образом number <= 1. Так оно точно отражает математический смысл проверки. -
+= исправлено. 
+
+
 22/04/2020:
 1. gitignore: исправлен, "*.DS..";
 
