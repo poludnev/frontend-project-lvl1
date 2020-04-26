@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import { randNum } from '../funcs';
+import { randNum } from '../utils';
 import runGame from '..';
 
 const getGCD = (num1, num2) => {
@@ -9,7 +9,7 @@ const getGCD = (num1, num2) => {
 
 const intro = 'Find the greatest common divisor of given numbers.';
 
-const findGcdGame = () => {
+const generateGcdGameRoundData = () => {
   const number1 = randNum();
   const number2 = randNum();
   const question = `${number1} ${number2}`;
@@ -17,4 +17,4 @@ const findGcdGame = () => {
   return cons(question, answer);
 };
 
-export default () => runGame(intro, findGcdGame);
+export default () => runGame(intro, generateGcdGameRoundData);

@@ -1,15 +1,15 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
-import { decorate } from './funcs';
+import { decorate } from './utils';
 
-export default (intro, callGame) => {
+export default (intro, generateGameRoundData) => {
   const attemptsLimit = 3;
   console.log('Welcome to the Brain Games!');
   console.log(`${intro}\n`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   for (let i = 0; i < attemptsLimit; i += 1) {
-    const gameRoundData = callGame();
+    const gameRoundData = generateGameRoundData();
     const question = car(gameRoundData);
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
